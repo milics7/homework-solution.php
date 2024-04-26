@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="srb">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +7,49 @@
 </head>
 <body>
 
-<!-- EN - Create an array of any three usernames - perhaps for a "Top Performing Users" section of your website.
-Then, create a loop that displays each username within a list item. -->
+<!-- EN - Extend the book list from this episode's example to 
+also include and display the release year immediately after the book's title. -->
 
-<!-- SRB - Napravi niz od tri korisnicka imena - recimo za "Korisnici Top Performansi" sekcije tvog sajta.
-Zatim, kreiraj petlju koja prikazuje svako ime ponaosob unutar poslednje stavke-->
+<!-- SR - Проширите листу књига из примера ове епизоде ​​да 
+бисте такође укључили и приказали годину издања одмах након наслова књиге -->
 
-<h1>Корисници Топ Перформанси</h1>
+<h1>ВРХУНСКЕ КЊИГЕ</h1>
 
-<?php $korisnickaImena = [
-    "Владан",
-    "Сергеј",
-    "Лазар"
-];?>
+<?php $knjige = [
+    [
+        'ime'=>'Витези Кнеза Лазара',
+        'godinaIzlaska'=>1994,
+        'autor'=>'Сергеј Милић',
+        'urlProdavnice'=>'http://primer0.com'
+    ],
+    [
+        'ime'=>'ДИНА',
+        'godinaIzlaska'=>1987,
+        'autor'=>'Френк Херберт',
+        'urlProdavnice'=>'http://primer1.com'
+    ],
+    [
+        'ime'=>'Педесет Нијанси Сива',
+        'godinaIzlaska'=>2013,
+        'autor'=>'Е. Л. Џејмс',
+        'urlProdavnice'=>'http://primer2.com'
+    ]
+ ];
 
-<ol>
-    <?php foreach ($korisnickaImena as $korisnickoIme) : ?>
-        <li><?=$korisnickoIme; ?></li>
+?>
+
+<ul>
+    <?php foreach ($knjige as $knjiga) : ?>
+        <li>
+            <a href="<?= $knjiga['urlProdavnice'] ?>">
+                <?= $knjiga['ime'];?>
+                <?= $knjiga['godinaIzlaska'];?>
+            </a>
+        </li>    
     <?php endforeach; ?>
-    </ol>
+
+</ul>
+
 
 </body>
 </html>
